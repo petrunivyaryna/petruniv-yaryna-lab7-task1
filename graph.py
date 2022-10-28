@@ -33,7 +33,10 @@ def is_edge_in_graph(graph, edge):
     >>> is_edge_in_graph({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (3, 1))
     False
     """
-    return edge[0] in graph.get(edge[1])
+    in_vertex = edge[1]
+    out_vertex = edge[0]
+    in_edges = graph.get(in_vertex)
+    return out_vertex in in_edges
 
 def add_edge(graph, edge):
     """ 
