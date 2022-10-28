@@ -33,7 +33,7 @@ def is_edge_in_graph(graph, edge):
     >>> is_edge_in_graph({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (3, 1))
     False
     """
-    pass
+    return edge[0] in graph.get(edge[1])
 
 def add_edge(graph, edge):
     """ 
@@ -86,3 +86,7 @@ def convert_to_dot(graph):
     Save the graph to a file in a DOT format.
     """
     pass
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod(verbose = True)
