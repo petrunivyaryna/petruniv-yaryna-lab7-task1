@@ -95,7 +95,10 @@ def add_node(graph, node):
     >>> add_node({1: [2], 2: [1]}, 3)
     {1: [2], 2: [1], 3: []}
     """
-    pass
+    if isinstance(graph, dict) and isinstance(node, int):
+        graph[node] = []
+        return graph
+    return None
 
 def del_node(graph, node):
     """ 
