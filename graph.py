@@ -15,7 +15,7 @@ def get_graph_from_file(file_name):
     with open(file_name, 'r', encoding = 'utf-8') as file:
         for line in file.readlines():
             content = line.strip().split(',')
-            graph.append([int(content[0])], int(content[1]))
+            graph.append([int(content[0]), int(content[1])])
     return graph
 
 
