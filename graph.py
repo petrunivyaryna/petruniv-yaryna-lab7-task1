@@ -87,10 +87,17 @@ def del_edge(graph, edge):
     
     >>> del_edge({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (2, 4))
     {1: [2, 5], 2: [1], 3: [4], 4: [3], 5: [1]}
+    >>> del_edge({1: [2], 2: [1]}, (1, 3))
+    {1: [2], 2: [1]}
+    >>> del_edge({1: [2], 2: [1]}, (3, 1))
+    {1: [2], 2: [1]}
+    >>> del_edge({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (2, 5))
+    {1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}
     """
     v_1, v_2 = edge
-    graph[v_1].remove(v_2)
-    graph[v_2].remove(v_1)
+    if v_1 in graph and v_2 in graph and v_2 in graph[v_1] and v_1 in graph[v_2]:    
+        graph[v_1].remove(v_2)
+        graph[v_2].remove(v_1)
     return graph
 
 def add_node(graph, node):
