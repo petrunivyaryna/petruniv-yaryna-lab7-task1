@@ -108,11 +108,12 @@ def add_node(graph, node):
     
     >>> add_node({1: [2], 2: [1]}, 3)
     {1: [2], 2: [1], 3: []}
+    >>> add_node({1: [2], 2: [1]}, 1)
+    {1: [2], 2: [1]}
     """
-    if isinstance(graph, dict) and isinstance(node, int):
+    if node not in graph:
         graph[node] = []
-        return graph
-    return None
+    return graph
 
 def del_node(graph, node):
     """ 
