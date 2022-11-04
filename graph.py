@@ -29,7 +29,20 @@ def to_edge_dict(edge_list):
     >>> to_edge_dict([[1, 2], [3, 4], [1, 5], [2, 4]])
     {1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}
     """
-    pass
+    graph = {}
+    for edges in edge_list:
+        v_1, v_2 = edges
+        if v_1 not in graph:
+            graph[v_1] = [v_2]
+        else:
+            graph[v_1].append(v_2)
+            graph[v_1].sort()
+        if v_2 not in graph:
+            graph[v_2] = [v_1]
+        else:
+            graph[v_2].append(v_1)
+            graph[v_2].sort()
+    return graph
 
 def is_edge_in_graph(graph, edge):
     """ 
