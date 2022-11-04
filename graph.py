@@ -54,7 +54,10 @@ def add_edge(graph, edge):
     >>> add_edge({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (1, 3))
     {1: [2, 5, 3], 2: [1, 4], 3: [4, 1], 4: [2, 3], 5: [1]}
     """
-    pass
+    v_1, v_2 = edge
+    graph[v_1].append(v_2)
+    graph[v_2].append(v_1)
+    return graph
 
 def del_edge(graph, edge):
     """ 
