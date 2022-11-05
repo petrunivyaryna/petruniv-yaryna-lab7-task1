@@ -107,16 +107,14 @@ def add_node(graph, node):
     return graph
 
 def del_node(graph, node):
-    """ 
+    """
     (dict, int) -> (dict)
-    
     Delete a node and all incident edges from the graph.
-    
     >>> del_node({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, 4)
     {1: [2, 5], 2: [1], 3: [], 5: [1]}
     """
     if node in graph:
-        del graph[node] 
+        del graph[node]
     for v_1 in range(1, len(graph)):
         if node in graph[v_1]:
             graph[v_1].remove(node)
