@@ -1,7 +1,7 @@
 # Complete all of the following functions. Currently they all just
 # 'pass' rather than explicitly return value, which means that they
 # implicitly return None.
-
+"""Develop functions that will perform actions on graphs."""
 def get_graph_from_file(file_name):
     """ 
     (str) -> (list)
@@ -136,5 +136,6 @@ def convert_to_dot(graph):
     (dict) -> (None)
     
     Save the graph to a file in a DOT format.
+    >>> convert_to_dot({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]})
     """
     pass
