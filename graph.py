@@ -51,7 +51,7 @@ def is_edge_in_graph(graph, edge):
     return out_vertex in in_edges
 
 def add_edge(graph, edge):
-    """ 
+    """
     (dict, tuple) -> dict
     Add a new edge to the graph and return new graph. 
     >>> add_edge({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (1, 3))
