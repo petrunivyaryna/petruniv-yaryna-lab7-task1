@@ -134,7 +134,6 @@ def del_node(graph, node):
 def convert_to_dot(graph):
     """ 
     (dict) -> (None)
-    
     Save the graph to a file in a DOT format.
     >>> convert_to_dot({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1], 6: [7], 7: [6]})
     """
@@ -148,7 +147,7 @@ def convert_to_dot(graph):
             if my_str_2 not in graph_2:
                 graph_1 += my_str_1
                 graph_2 += str(result[i][1][j]) + str(result[i][0])
-    graph_1 += "}"          
+    graph_1 += "}"
     f = open("graph_1.dot", "w")
     f.write(f'{graph_1}')
     f.close()
