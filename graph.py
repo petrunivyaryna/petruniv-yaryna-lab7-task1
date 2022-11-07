@@ -105,9 +105,10 @@ def add_node(graph, node):
     >>> add_node({1: [2], 2: [1]}, 1)
     {1: [2], 2: [1]}
     """
-    if node not in graph:
-        graph[node] = []
-    return graph
+    graph_1 = copy.deepcopy(graph)
+    if node not in graph_1:
+        graph_1[node] = []
+    return graph_1
 
 def del_node(graph, node):
     """
