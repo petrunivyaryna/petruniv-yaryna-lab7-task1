@@ -131,7 +131,7 @@ def convert_to_dot(graph):
     result = list(graph.items())
     for i in range(len(result)):
         for j in range(len(result[i][1])):
-            my_str_1 = str(result[i][0]) + "--" + str(result[i][1][j]) + "\n"
+            my_str_1 = str(result[i][0]) + " -- " + str(result[i][1][j]) + "\n"
             my_str_2 = str(result[i][0]) +  str(result[i][1][j])
             if my_str_2 not in graph_2:
                 graph_1 += my_str_1
