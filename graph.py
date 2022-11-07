@@ -51,24 +51,27 @@ def is_edge_in_graph(graph, edge):
     return out_vertex in in_edges
 
 def add_edge(graph, edge):
-    """ 
+    """
     (dict, tuple) -> dict
-    
     Add a new edge to the graph and return new graph. 
-    
     >>> add_edge({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (1, 3))
     {1: [2, 5, 3], 2: [1, 4], 3: [4, 1], 4: [2, 3], 5: [1]}
     >>> add_edge({1: [2], 2: [1]}, (1, 3))
-    {1: [2], 2: [1]}
+    {1: [2, 3], 2: [1], 3: [1]}
     >>> add_edge({1: [2], 2: [1]}, (3, 1))
-    {1: [2], 2: [1]}
+    {1: [2, 3], 2: [1], 3: [1]}
     >>> add_edge({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (6, 7))
-    {1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}
+    {1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1], 6: [7], 7: [6]}
     """
     v_1, v_2 = edge
-    if v_1 in graph and v_2 in graph:
-        graph[v_2].append(v_1)
+    if v_1 not in graph:
+        graph[v_1] = [v_2]
+    else:
         graph[v_1].append(v_2)
+    if v_2 not in graph:
+        graph[v_2] = [v_1]
+    else:
+        graph[v_2].append(v_1)
     return graph
 
 def del_edge(graph, edge):
