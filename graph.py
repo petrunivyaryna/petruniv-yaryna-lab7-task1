@@ -2,6 +2,7 @@
 # 'pass' rather than explicitly return value, which means that they
 # implicitly return None.
 """Develop functions that will perform actions on graphs."""
+import copy
 def get_graph_from_file(file_name):
     """
     (str) -> (list)
