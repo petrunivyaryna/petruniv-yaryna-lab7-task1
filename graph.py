@@ -64,16 +64,17 @@ def add_edge(graph, edge):
     >>> add_edge({1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1]}, (6, 7))
     {1: [2, 5], 2: [1, 4], 3: [4], 4: [2, 3], 5: [1], 6: [7], 7: [6]}
     """
+    graph_1 = copy.deepcopy(graph)
     v_1, v_2 = edge
-    if v_1 not in graph:
-        graph[v_1] = [v_2]
+    if v_1 not in graph_1:
+        graph_1[v_1] = [v_2]
     else:
-        graph[v_1].append(v_2)
+        graph_1[v_1].append(v_2)
     if v_2 not in graph:
-        graph[v_2] = [v_1]
+        graph_1[v_2] = [v_1]
     else:
-        graph[v_2].append(v_1)
-    return graph
+        graph_1[v_2].append(v_1)
+    return graph_1
 
 def del_edge(graph, edge):
     """
