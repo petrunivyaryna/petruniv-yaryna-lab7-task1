@@ -137,6 +137,6 @@ def convert_to_dot(graph):
                 graph_1 += my_str_1
                 graph_2 += str(result[i][1][j]) + str(result[i][0])
     graph_1 += "}"
-    f = open("graph_1.dot", "w")
-    f.write(f'{graph_1}')
-    f.close()
+    file = open("graph_1.dot", "w")
+    file.write(f'{graph_1}')
+    file.close()
